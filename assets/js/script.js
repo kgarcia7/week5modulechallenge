@@ -2,11 +2,11 @@
 $(document).ready(function() { 
 
 /*TODO: Add a listener for click events on the save button. This code should use the id in the containing time-block as a key to save the user input in local storage. HINT: What does `this` reference in the click listener function? How can DOM traversal be used to get the "hour-x" id of the time-block containing the button that was clicked? How might the id be useful when saving the description in local storage?*/
-$(".saveBtn").on("click", function (){
-  const userInput = $(this).siblings("text").val();
-  const timeBlockId = $(this).closet(".time-block").attr("id");
+$(".saveBtn").on("click", function () {
+  const userInput = $(this).siblings(".description").val();
+  const timeBlockId = $(this).closest(".time-block").attr("id");
   localStorage.setItem(timeBlockId, userInput);
-})
+});
 
 
 /*TODO: Add code to apply the past, present, or future class to each time
@@ -17,7 +17,7 @@ past, present, and future classes? How can Day.js be used to get the current hou
 function updateTimeBlocks() {
   const currentTime = dayjs().format("H");
 
-$(".timeBlock").each(function (){
+$(".timeBlock").each(function() {
   const blockHour = parseInt($(this).data("hour"));
 
 
@@ -33,8 +33,29 @@ $(".timeBlock").each(function (){
 
 updateTimeBlocks();
 setInterval(updateTimeBlocks, 60000);
-});
+
 
 /*TODO: Add code to get any user input that was saved in localStorage and set the values of the corresponding textarea elements. HINT: How can the id attribute of each time-block be used to do this?*/
+function getUserInput (){
+  $(".timeBlock").each(function() {
+    const timeBlockId = $(this).attr("id");
+    const savedInput = localStorage.getItem(timeBlockId);
+
+    if (savedInput !== null) {
+      $(this).find("textarea").val(savedInput);
+    }
+  });
+}
+
+getUserInput();
+
 
 /*TODO: Add code to display the current date in the header of the page.*/
+function getCurrentDate(){
+  const currentDate = dayjs().format("MMMM D, YYYY hh:mm A");
+  $("#currentDay").text(currentDate);
+}
+
+getCurrentDate();
+
+});
