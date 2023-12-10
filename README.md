@@ -1,4 +1,7 @@
-# week5modulechallenge
+# Third-Party APIs Challenge: Work Day Scheduler
+
+# Description
+Create a simple calendar application that allows a user to save events for each hour of a typical working day (9am–5pm). This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 ## User Story
 AS AN employee with a busy schedule  
@@ -20,13 +23,14 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page  
 THEN the saved events persist  
 
+## Screenshot
+<img width="1188" alt="image" src="https://github.com/kgarcia7/week5modulechallenge/assets/141987295/df14fba4-2f9f-4054-9918-72bee7352b7b">
+
 ### Resources
 *The following links were used as reference to complete this week's challenge*
 - https://www.w3schools.com/jquery/jquery_get_started.asp
 - https://day.js.org/docs/en/display/format
 - https://api.jquery.com/removeClass/#removeClass-className
 - https://youtu.be/BaIgTKj1iCQ?si=Dk9PLzp1Ds01gK19
-
-<img width="1188" alt="image" src="https://github.com/kgarcia7/week5modulechallenge/assets/141987295/df14fba4-2f9f-4054-9918-72bee7352b7b">
 
 Link: https://kgarcia7.github.io/week5modulechallenge/
